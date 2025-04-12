@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         CBT Anti-Cheat Bypass 2.0
-// @namespace    https://cbt.sman16bekasi.id/
+// @namespace    <website_address>
 // @version      2.0
 // @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer
 // @author       N/A
-// @match        *://cbt.sman16bekasi.id/*
+// @match        *://<website_address>/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
