@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CBT Anti-Cheat Bypass 2.1
 // @namespace    <website_address>
-// @version      2.1
+// @version      2.2
 // @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer, fullscreen spoof
 // @author       N/A
 // @match        *://<website_address>/*
@@ -37,6 +37,19 @@
         if (['fullscreenchange', 'fullscreenerror'].includes(type)) return;
         return originalAddEvent.call(this, type, listener, options);
     };
+
+    // Patch session-config.fullScreen = true setiap 3 detik
+    setInterval(() => {
+        try {
+            const session = JSON.parse(sessionStorage.getItem("session-config"));
+            if (session && session.fullScreen !== true) {
+                session.fullScreen = true;
+                sessionStorage.setItem("session-config", JSON.stringify(session));
+                console.warn("[CBT Bypass] Re-spoofed session fullScreen state.");
+            }
+        } catch (e) {}
+    }, 3000);
+
 
     // Patch session state if cheating is detected
     const patchState = () => {
