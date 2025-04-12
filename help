@@ -3,9 +3,13 @@ Untuk membuat script berjalan, sangat penting
 untuk menentukan alamat website target agar 
 script bisa berjalan.
 
-_Panduan Pengaplikasian:_
+#Panduan Pengaplikasian:
 1. Tentukan alamat website target, contoh (https://cbt.platform.com)
 2. ganti bagian:
-"// @namespace    <website_address>"
+// @namespace    <website_address>
 dengan URL website. Contoh hasil:
-"// @namespace    https://cbt.platform.com"
+// @namespace    https://cbt.platform.com
+3. ganti bagian:
+// @match        *://<website_address>/*
+dengan domain website. Contoh  hasil:
+// @match        *://cbt.platform.com/*
