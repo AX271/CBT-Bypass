@@ -5,11 +5,28 @@ script bisa berjalan.
 
 #Panduan Pengaplikasian:
 1. Tentukan alamat website target, contoh (https://cbt.platform.com)
+
 2. ganti bagian:
 // @namespace    <website_address>
 dengan URL website. Contoh hasil:
-// @namespace    https://cbt.platform.com
+// @namespace    https://cbt.platform.com/
+
 3. ganti bagian:
 // @match        *://<website_address>/*
 dengan domain website. Contoh  hasil:
 // @match        *://cbt.platform.com/*
+
+4. Sehingga hasil keseluruhannya menjadi:
+// ==UserScript==
+// @name         CBT Anti-Cheat Bypass 2.0
+// @namespace    https://cbt.platform.com/
+// @version      2.0
+// @description  Full bypass anti-cheat
+// @author       N/A
+// @match        *://cbt.platform.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+5. Jika tampilan sudah benar, maka pemasangan
+<website_address> sudah benar.
