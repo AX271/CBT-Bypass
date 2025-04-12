@@ -3,12 +3,14 @@
 _Warning: This only works for the current version of the system._
 
 Dokumentasi ini ditulis untuk membantu pengguna lain dalam mem-bypass sistem keamanan CBT.
-Skrip dan dokumen yang disediakan tidak mengandung malware atau intervensi berbahaya lainnya. Semua skrip dibuat berdasarkan analisis mendalam terhadap source code dari situs web terkait, sehingga tingkat keberhasilan bergantung pada sistem keamanan berbasis client-side.
+Skrip dan dokumen yang disediakan tidak mengandung malware atau intervensi berbahaya lainnya. Semua skrip dibuat berdasarkan analisis mendalam terhadap source code dari situs web terkait, sehingga tingkat keberhasilan bergantung pada sistem keamanan berbasis client-side yang tertanam pada source code web masing-masing.
+
+*Note: Kode mungkin tidak seutuhnya bekerja pada CBT yang memiliki keamanan tingkat lanjut*
 
 _Preview script:_
 https://github.com/AX271/CBT-Bypass/blob/main/Code
 
-Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (source code) dalam bentuk teks biasa, tidak ada file berbahaya yang dijalankan secara otomatis. GitHub sendiri adalah platform terpercaya yang digunakan secara luas oleh developer, peneliti, dan institusi resmi untuk menyimpan dan membagikan kode. Tujuan dari repository ini adalah untuk memby-pass pengamanan pada aplikasi CBT (Computer-Based Test) berbasis web. Isi repository ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar proteksi semacam anti-debugging dan pemblokiran context menu bisa dicegah untuk bekerja. Harap tenang saat mengakses link ini, karena tidak ada yang otomatis dijalankan di perangkat Anda—semuanya bersifat terbuka, transparan, dan dapat dibaca langsung oleh siapa saja.
+Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (source code) dalam bentuk teks biasa, tidak ada file berbahaya yang dijalankan secara otomatis. GitHub sendiri adalah platform terpercaya yang digunakan secara luas oleh developer, peneliti, dan institusi resmi untuk menyimpan dan membagikan kode. Tujuan dari repository ini adalah untuk mem-bypass pengamanan pada aplikasi CBT (Computer-Based Test) berbasis web. Isi repository ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar proteksi semacam anti-debugging dan pemblokiran context menu bisa dicegah untuk bekerja. Harap tenang saat mengakses link ini, karena tidak ada yang otomatis dijalankan di perangkat Anda—semuanya bersifat terbuka, transparan, dan dapat dibaca langsung oleh siapa saja.
 
 *Panduan penggunaan:*
 
@@ -26,9 +28,10 @@ Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (sourc
 - Masuk ke Extensions, kemudian klik Tampermonkey
 8. Klik Create a new script
 9. Hapus semua kode default yang muncul, lalu gantikan dengan kode yang tersedia di dokumen berikut: (https://github.com/AX271/CBT-Bypass/blob/main/Code)
-10. Setelah menempelkan kode, klik File > Save (di pojok kiri atas editor).
-11. Buka bagian Installed Userscripts, aktifkan skrip baru dengan menggeser toggle hingga berwarna hijau. (Jika sudah berwarna hijau tidak perlu melakukannya lagi)
-12. Jika sudah aktif, skrip akan berjalan secara otomatis saat membuka laman CBT.
+10. Setelah menempelkan kode, ganti bagian ```<website_addres>``` dengan alamat web CBT yang digunakan.
+11. Simpan script dengan klik File > Save (di pojok kiri atas editor).
+12. Buka bagian Installed Userscripts, aktifkan skrip baru dengan menggeser toggle hingga berwarna hijau. (Jika sudah berwarna hijau tidak perlu melakukannya lagi)
+13. Jika sudah aktif, skrip akan berjalan secara otomatis saat membuka laman CBT.
 
 *Penjelasan & Pedoman Penggunaan:*
 
