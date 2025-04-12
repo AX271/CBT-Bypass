@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         CBT Anti-Cheat Bypass 2.0
+// @name         CBT Anti-Cheat Bypass 2.1
 // @namespace    <website_address>
-// @version      2.0
-// @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer
+// @version      2.1
+// @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer, fullscreen spoof
 // @author       N/A
 // @match        *://<website_address>/*
 // @run-at       document-start
@@ -23,6 +23,20 @@
     // Force visibility always active
     Object.defineProperty(document, 'hidden', { get: () => false });
     Object.defineProperty(document, 'visibilityState', { get: () => 'visible' });
+
+    // Spoof fullscreen state
+    Object.defineProperty(document, 'fullscreenElement', {
+        get: () => document.documentElement
+    });
+    document.exitFullscreen = function () {
+        console.warn("[CBT Bypass] Blocked exitFullscreen");
+        return Promise.resolve();
+    };
+    const originalAddEvent = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function (type, listener, options) {
+        if (['fullscreenchange', 'fullscreenerror'].includes(type)) return;
+        return originalAddEvent.call(this, type, listener, options);
+    };
 
     // Patch session state if cheating is detected
     const patchState = () => {
