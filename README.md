@@ -33,6 +33,7 @@ Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (sourc
 12. Buka bagian Installed Userscripts, aktifkan skrip baru dengan menggeser toggle hingga berwarna hijau. (Jika sudah berwarna hijau tidak perlu melakukannya lagi)
 13. Jika sudah aktif, skrip akan berjalan secara otomatis saat membuka laman CBT.
 
+_Bantuan:_
 *Jika merasa bingung mengenai cara pengaplikasian ```<website_address>```, pergi ketautan ini: https://github.com/AX271/CBT-Bypass/blob/main/help*
 
 *Penjelasan & Pedoman Penggunaan:*
