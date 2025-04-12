@@ -1,6 +1,6 @@
 # How to Bypass Anti-Cheat on CBT?!
 
-_Warning: This only works for the current version of the system._
+_Warning: This guide may not work fully for all types of CBT._
 
 Dokumentasi ini ditulis untuk membantu pengguna lain dalam mem-bypass sistem keamanan CBT.
 Skrip dan dokumen yang disediakan tidak mengandung malware atau intervensi berbahaya lainnya. Semua skrip dibuat berdasarkan analisis mendalam terhadap source code dari situs web terkait, sehingga tingkat keberhasilan bergantung pada sistem keamanan berbasis client-side yang tertanam pada source code web masing-masing.
@@ -33,28 +33,28 @@ Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (sourc
 12. Buka bagian Installed Userscripts, aktifkan skrip baru dengan menggeser toggle hingga berwarna hijau. (Jika sudah berwarna hijau tidak perlu melakukannya lagi)
 13. Jika sudah aktif, skrip akan berjalan secara otomatis saat membuka laman CBT.
 
-```Jika merasa bingung mengenai cara pengaplikasian <website_address>, pergi ketautan ini: ```
+*Jika merasa bingung mengenai cara pengaplikasian ```<website_address>```, pergi ketautan ini:*
 
 *Penjelasan & Pedoman Penggunaan:*
 
 _1. Fungsi Utama Script_
 
- ```A. Mencegah Deteksi Perpindahan Fokus Pengguna``` 
+ *A. Mencegah Deteksi Perpindahan Fokus Pengguna*
 Skrip ini mencegah deteksi ketika pengguna berpindah tab, membuka aplikasi lain, atau mengakses menu konteks, sehingga aplikasi tidak mencurigai bahwa pengguna sedang curang.
 
- ```B. Memastikan Halaman Selalu Terlihat``` 
+*B. Memastikan Halaman Selalu Terlihat* 
 Skrip ini membuat halaman ujian selalu terlihat aktif, meskipun pengguna berpindah tab atau layar.
 
- ```C. Menghapus Tanda Kecurangan``` 
+*C. Menghapus Tanda Kecurangan*
 Skrip ini mereset status jika ada indikasi kecurangan, seperti pergerakan mouse atau penggunaan cheat.
 
- ```D. Membuka Akses Teks dan Klik Kanan``` 
+*D. Membuka Akses Teks dan Klik Kanan* 
 Skrip ini membuka kembali kemampuan untuk menyeleksi teks soal dan mengaktifkan klik kanan yang biasanya diblokir.
 
- ```E. Memblokir Pengiriman Data Kecurangan``` 
+*E. Memblokir Pengiriman Data Kecurangan*
 Skrip ini memblokir pengiriman data yang mencurigakan, seperti informasi tentang aktivitas curang.
 
- ```F. Menghapus Iframe Mencurigakan``` 
+*F. Menghapus Iframe Mencurigakan* 
 Skrip ini menghapus elemen-elemen halaman yang digunakan untuk memantau atau mengawasi pengguna selama ujian.
 
 _2. Hal-Hal yang Harus Diperhatikan_
