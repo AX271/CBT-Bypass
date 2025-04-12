@@ -80,4 +80,8 @@ _DISCLAIMER:_
 - Penggunaan script ini adalah tanggung jawab pengguna sepenuhnya.
 - Pengembang tidak bertanggung jawab atas risiko penalti, diskualifikasi, atau pelanggaran aturan ujian akibat penyalahgunaan script ini.
 
+## Lisensi
+Proyek ini dirilis ke domain publik dengan [The Unlicense](https://unlicense.org/).  
+Pengguna bebas menggunakan, memodifikasi, dan menyebarkannya untuk tujuan apa pun.
+
 _Dukung pengembangan dengan feedback dari hasil uji coba!_
