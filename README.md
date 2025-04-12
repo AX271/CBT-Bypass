@@ -29,13 +29,13 @@ Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (sourc
 8. Klik Create a new script
 9. Hapus semua kode default yang muncul, lalu gantikan dengan kode yang tersedia di dokumen berikut: (https://github.com/AX271/CBT-Bypass/blob/main/Code)
 10. Setelah menempelkan kode, ganti bagian ```<website_address>``` dengan alamat web CBT yang digunakan.
-  (Jika merasa bingung, scroll kebawah hingga menemukan _Bantuan_)
+  (Jika merasa bingung, scroll ke bawah hingga menemukan _Bantuan_)
 11. Simpan script dengan klik File > Save (di pojok kiri atas editor).
 12. Buka bagian Installed Userscripts, aktifkan skrip baru dengan menggeser toggle hingga berwarna hijau. (Jika sudah berwarna hijau tidak perlu melakukannya lagi)
 13. Jika sudah aktif, skrip akan berjalan secara otomatis saat membuka laman CBT.
 
 _Bantuan:_
-*Jika merasa bingung mengenai cara pengaplikasian ```<website_address>```, pergi ketautan ini: https://github.com/AX271/CBT-Bypass/blob/main/help*
+*Jika merasa bingung mengenai cara pengaplikasian ```<website_address>```, pergi ke tautan ini: https://github.com/AX271/CBT-Bypass/blob/main/help*
 
 *Penjelasan & Pedoman Penggunaan:*
 
