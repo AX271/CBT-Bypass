@@ -1,4 +1,4 @@
-# How to Bypass Anti-Cheat on CBT?! 2.0
+# How to Bypass Anti-Cheat on CBT?!
 
 _Warning: This only works for the current version of the system._
 
