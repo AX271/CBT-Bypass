@@ -8,7 +8,7 @@ Skrip dan dokumen yang disediakan tidak mengandung malware atau intervensi berba
 *Note: Kode mungkin tidak seutuhnya bekerja pada CBT yang memiliki keamanan tingkat lanjut*
 
 _Preview script:_
-https://github.com/AX271/CBT-Bypass/blob/main/Code
+[script](https://github.com/AX271/CBT-Bypass/blob/main/Code)
 
 Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (source code) dalam bentuk teks biasa, tidak ada file berbahaya yang dijalankan secara otomatis. GitHub sendiri adalah platform terpercaya yang digunakan secara luas oleh developer, peneliti, dan institusi resmi untuk menyimpan dan membagikan kode. Tujuan dari repository ini adalah untuk mem-bypass pengamanan pada aplikasi CBT (Computer-Based Test) berbasis web. Isi repository ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar proteksi semacam anti-debugging dan pemblokiran context menu bisa dicegah untuk bekerja. Harap tenang saat mengakses link ini, karena tidak ada yang otomatis dijalankan di perangkat Anda—semuanya bersifat terbuka, transparan, dan dapat dibaca langsung oleh siapa saja.
 
@@ -27,7 +27,7 @@ Link GitHub yang dibagikan aman untuk dibuka dan hanya berisi kode sumber (sourc
 - Klik ikon menu (3 garis)
 - Masuk ke Extensions, kemudian klik Tampermonkey
 8. Klik Create a new script
-9. Hapus semua kode default yang muncul, lalu gantikan dengan kode yang tersedia di dokumen berikut: (https://github.com/AX271/CBT-Bypass/blob/main/Code)
+9. Hapus semua kode default yang muncul, lalu gantikan dengan kode yang tersedia di dokumen berikut: [script](https://github.com/AX271/CBT-Bypass/blob/main/Code)
 10. Setelah menempelkan kode, ganti bagian ```<website_address>``` dengan alamat web CBT yang digunakan.
   (Jika merasa bingung mengenai cara pengaplikasian ```<website_address>```, pergi ke tautan ini: [help](https://github.com/AX271/CBT-Bypass/blob/main/help)
 11. Simpan script dengan klik File > Save (di pojok kiri atas editor).
