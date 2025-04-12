@@ -1,0 +1,11 @@
+#Panduan pengaplikasian <website_address>
+Untuk membuat script berjalan, sangat penting 
+untuk menentukan alamat website target agar 
+script bisa berjalan.
+
+_Panduan Pengaplikasian:_
+1. Tentukan alamat website target, contoh (https://cbt.platform.com)
+2. ganti bagian:
+"// @namespace    <website_address>"
+dengan URL website. Contoh hasil:
+"// @namespace    https://cbt.platform.com"
