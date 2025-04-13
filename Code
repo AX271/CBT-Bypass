@@ -6,18 +6,30 @@
 // @author       N/A
 // @match        *://<website_address>/*
 // @run-at       document-start
-// @grant        unsafeWindow
+// @grant        none
 // ==/UserScript==
+
+// Males remove console
+console.log = () => {};
+console.warn = () => {};
 
 (function () {
     'use strict';
 
     // Block cheat-related event listeners
-    const blockedEvents = ['visibilitychange', 'blur', 'focus', 'contextmenu', 'keydown'];
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
+    const blockedEvents = [
+        'visibilitychange',
+        'blur',
+        'focus',
+        'contextmenu',
+        'keydown',
+        'fullscreenchange',
+        'fullscreenerror'
+    ];
+    const originalAddEvent = EventTarget.prototype.addEventListener;
     EventTarget.prototype.addEventListener = function (type, listener, options) {
         if (blockedEvents.includes(type)) return;
-        return originalAddEventListener.call(this, type, listener, options);
+        return originalAddEvent.call(this, type, listener, options);
     };
 
     // Force visibility always active
@@ -32,24 +44,21 @@
         console.warn("[CBT Bypass] Blocked exitFullscreen");
         return Promise.resolve();
     };
-    const originalAddEvent = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function (type, listener, options) {
-        if (['fullscreenchange', 'fullscreenerror'].includes(type)) return;
-        return originalAddEvent.call(this, type, listener, options);
-    };
 
-    // Patch session-config.fullScreen = true setiap 3 detik
+    // Headless browser identity protection
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+    Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3] });
+
+    // Patch session-config.fullScreen = true
     setInterval(() => {
         try {
             const session = JSON.parse(sessionStorage.getItem("session-config"));
             if (session && session.fullScreen !== true) {
                 session.fullScreen = true;
                 sessionStorage.setItem("session-config", JSON.stringify(session));
-                console.warn("[CBT Bypass] Re-spoofed session fullScreen state.");
             }
         } catch (e) {}
     }, 3000);
-
 
     // Patch session state if cheating is detected
     const patchState = () => {
@@ -73,8 +82,8 @@
  
     // Bypass Vue Reactive Anti-Cheat Store
     const patchVueReactiveStore = () => {
-        for (const key in unsafeWindow) {
-            const obj = unsafeWindow[key];
+        for (const key in window) {
+            const obj = window[key];
             if (
                 obj &&
                 typeof obj === 'object' &&
@@ -111,29 +120,46 @@
         const apply = () => {
             document.body.style.userSelect = 'text';
             document.body.style.webkitUserSelect = 'text';
+            document.body.style.msUserSelect = 'text';
+            document.body.style.MozUserSelect = 'text';
             document.oncontextmenu = null;
         };
         document.addEventListener('DOMContentLoaded', apply);
         setTimeout(apply, 1000);
     };
 
-    // Intercept WebSocket
+    // Intercept WebSocket and apply hiding
     const interceptWebSocket = () => {
-        const OriginalWebSocket = window.WebSocket;
-        window.WebSocket = function (url, protocols) {
-            const ws = new OriginalWebSocket(url, protocols);
+        const realWebSocket = window.WebSocket;
+        const WebSocketProxy = new Proxy(realWebSocket, {
+            construct(target, args) {
+                const ws = new target(...args);
+                const realSend = ws.send;
+                ws.send = function (data) {
+                    if (typeof data === "string" && data.includes("cheat")) {
+                        console.warn("[CBT Bypass] Blocked WS message:", data);
+                        return;
+                    }
+                    return realSend.call(this, data);
+                };
+                return ws;
+            },
+            get(target, prop) {
+                return Reflect.get(target, prop);
+            }
+        });
 
-            const originalSend = ws.send;
-            ws.send = function (data) {
-                if (typeof data === "string" && data.includes("cheat")) {
-                    console.warn("[CBT Bypass] Blocked WS message:", data);
-                    return;
-                }
-                return originalSend.call(this, data);
-            };
-
-            return ws;
-        };
+        // Change global WebSocket to proxy
+        Object.defineProperty(window, 'WebSocket', {
+            configurable: true,
+            enumerable: true,
+            get() {
+                return WebSocketProxy;
+            },
+            set(_) {
+               
+            }
+        });
     };
 
     // Intercept fetch and XHR logging
@@ -182,6 +208,37 @@
         });
     };
 
+    // MutationObserver
+    const startObserver = () => {
+        const body = document.body;
+        if (!body) {
+            requestAnimationFrame(startObserver);
+            return;
+        }
+
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                if (mutation.type === 'attributes') {
+                    console.log('[CBT Bypass] Atribut berubah pada:', mutation.target);
+                }
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.tagName === "IFRAME") {
+                            console.warn("[CBT Bypass] Iframe mencurigakan terdeteksi via observer:", node.src);
+                            node.remove();
+                        }
+                    });
+                }
+            });
+        });
+
+        observer.observe(body, {
+            attributes: true,
+            childList: true,
+            subtree: true
+        });
+    };
+
     // Start all defenses
     interceptWebSocket();
     interceptLogCalls();
@@ -193,4 +250,6 @@
         const success = patchVueReactiveStore();
         if (success) clearInterval(vuePatchLoop);
     }, 1000);
+
+    startObserver();
 })();
