@@ -1,25 +1,21 @@
 #Panduan pengaplikasian <website_address>
 Untuk membuat script berjalan, sangat penting 
-untuk menentukan alamat website target agar 
+untuk menentukan URL/alamat website target agar 
 script bisa berjalan.
 
 #Panduan Pengaplikasian:
-1. Tentukan alamat website target, contoh (https://cbt.platform.com)
+1. Tentukan alamat website target, 
+contoh URL: (https://cbt.platform.com)
 
 2. ganti bagian:
-// @namespace    <website_address>
-dengan URL website. Contoh hasil:
-// @namespace    https://cbt.platform.com/
-
-3. ganti bagian:
 // @match        *://<website_address>/*
 dengan domain website. Contoh  hasil:
 // @match        *://cbt.platform.com/*
 
-4. Sehingga hasil keseluruhannya menjadi:
+3. Sehingga hasil keseluruhannya menjadi:
 // ==UserScript==
 // @name         CBT Anti-Cheat Bypass 2.0
-// @namespace    https://cbt.platform.com/
+// @namespace    cbt-bypass-v2
 // @version      2.0
 // @description  Full bypass anti-cheat
 // @author       N/A
@@ -28,5 +24,12 @@ dengan domain website. Contoh  hasil:
 // @grant        none
 // ==/UserScript==
 
-5. Jika tampilan sudah benar, maka pemasangan
+4. Jika tampilan sudah benar, maka pemasangan
 <website_address> sudah benar.
+
+#Peringatan!:
+Panduan diatas merupakan contoh kode lama,
+jika seandainya kode baru telah rilis, maka
+penamaan versi dan beberapa hal lainnya dapat
+berubah, namun tidak merubah inti dari cara
+pengaplikasiannya.
