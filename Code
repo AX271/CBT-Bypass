@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CBT Anti-Cheat Bypass 2.1
 // @namespace    <website_address>
-// @version      2.2
+// @version      2.3
 // @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer, fullscreen spoof
 // @author       N/A
 // @match        *://<website_address>/*
@@ -69,6 +69,41 @@
         } catch (e) {
             console.warn("[CBT Bypass] Patch error:", e);
         }
+    };
+ 
+    //Bypass Vue Reactive Anti-Cheat Store
+    const patchVueReactiveStore = () => {
+        for (const key in unsafeWindow) {
+            const obj = unsafeWindow[key];
+            if (
+                obj &&
+                typeof obj === 'object' &&
+                'hasCheat' in obj &&
+                'totalMove' in obj &&
+                'userSessionExam' in obj
+            ) {
+                console.log("[CBT Bypass] Vue anti-cheat state found:", key);
+
+                Object.defineProperty(obj, 'hasCheat', {
+                    get() { return false; },
+                    set(v) { console.warn("[CBT Bypass] Blocked hasCheat =", v); }
+                });
+
+                Object.defineProperty(obj, 'totalMove', {
+                    get() { return 0; },
+                    set(v) { console.warn("[CBT Bypass] Blocked totalMove =", v); }
+                });
+
+                Object.defineProperty(obj, 'maximumMove', {
+                    get() { return 999; },
+                    set(v) { console.warn("[CBT Bypass] Blocked maximumMove =", v); }
+                });
+
+                return true;
+            }
+        }
+
+        return false;
     };
 
     // Enable text selection and right-click
