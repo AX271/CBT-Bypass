@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         CBT Anti-Cheat Bypass 2.1
-// @namespace    <website_address>
+// @name         CBT Anti-Cheat Bypass 2.3
+// @namespace    cbt-bypass-v2.3
 // @version      2.3
 // @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer, fullscreen spoof
 // @author       N/A
@@ -71,7 +71,7 @@
         }
     };
  
-    //Bypass Vue Reactive Anti-Cheat Store
+    // Bypass Vue Reactive Anti-Cheat Store
     const patchVueReactiveStore = () => {
         for (const key in unsafeWindow) {
             const obj = unsafeWindow[key];
@@ -188,4 +188,9 @@
     setInterval(patchState, 2000);
     setInterval(enableText, 3000);
     setInterval(removeIframes, 5000);
+
+    const vuePatchLoop = setInterval(() => {
+        const success = patchVueReactiveStore();
+        if (success) clearInterval(vuePatchLoop);
+    }, 1000);
 })();
