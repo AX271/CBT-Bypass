@@ -6,7 +6,7 @@
 // @author       N/A
 // @match        *://<website_address>/*
 // @run-at       document-start
-// @grant        none
+// @grant        unsafeWindow
 // ==/UserScript==
 
 (function () {
