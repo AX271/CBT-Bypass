@@ -64,7 +64,7 @@ Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan un
  * Masuk ke Pengaturan: Pilih opsi Setting.
  * Pilih Script: Dari menu pengaturan, ketuk Script.
  * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
- * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini (CBT Anti-Cheat Bypass v3.0 Script) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v3.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
  * Sesuaikan Alamat Web CBT:
    * Pada bagian awal kode, temukan baris:
      // @match        *://<website_address>/*
@@ -93,7 +93,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Buka pengaturan modul LSP ChromeXT.
    * Cari opsi untuk menambahkan skrip kustom atau user script.
    * Tempelkan kode skrip CBT Anti-Cheat Bypass v3.0 Anda ke area yang disediakan.
-   * Pastikan Anda telah mengganti */your_web_address/* dengan alamat web CBT yang benar.
+   * Pastikan Anda telah mengganti *://<website_address>/* dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda (ikuti cara non-root).
