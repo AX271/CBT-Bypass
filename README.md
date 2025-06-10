@@ -200,14 +200,4 @@ Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba And
 
 # 📜 Lisensi
 Proyek ini dirilis ke domain publik dengan [The Unlicense](https://unlicens.org/).
-Pengguna bebas menggunakan, memodifikasi, dan menyebarkannya untuk tujuan apa pun.emui agar skrip bisa terus dikembangkan sesuai peningkatan keamanan CBT.
-   
-# ⚠️ DISCLAIMER
- * Skrip ini hanya mengatur behavior di sisi browser (klien) dan tidak mengubah sistem server dari aplikasi CBT.
- * Penggunaan skrip ini adalah tanggung jawab pengguna sepenuhnya.
- * Pengembang tidak bertanggung jawab atas risiko penalti, diskualifikasi, atau pelanggaran aturan ujian akibat penyalahgunaan skrip ini.
-Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba Anda! Terima kasih sudah membaca dan semangat mencoba!
-
-# 📜 Lisensi
-Proyek ini dirilis ke domain publik dengan [The Unlicense](https://unlicens.org/).
 Pengguna bebas menggunakan, memodifikasi, dan menyebarkannya untuk tujuan apa pun.
