@@ -19,27 +19,27 @@ Skrip CBT Anti-Cheat Bypass v3.0 hadir dengan beberapa peningkatan signifikan un
    
 # 🛠️ Panduan Penggunaan
 A. Untuk Browser Desktop (Disarankan Microsoft Edge)
- * Unduh Browser: Pastikan Anda menggunakan browser yang mendukung ekstensi, seperti Microsoft Edge.
- * Buka Halaman Utama Edge: Setelah terinstal, buka halaman home Microsoft Edge.
- * Akses Ekstensi:
+1. Unduh Browser: Pastikan Anda menggunakan browser yang mendukung ekstensi, seperti Microsoft Edge.
+2. Buka Halaman Utama Edge: Setelah terinstal, buka halaman home Microsoft Edge.
+3. Akses Ekstensi:
    * Klik ikon menu tiga garis horizontal di pojok kanan atas.
    * Pilih Extensions (Ekstensi).
- * Instal Tampermonkey:
+4. Instal Tampermonkey:
    * Cari ekstensi bernama Tampermonkey.
    * Klik Get dan Add untuk menginstalnya.
- * Aktifkan Tampermonkey:
+5. Aktifkan Tampermonkey:
    * Setelah terpasang, klik ikon tiga titik di sebelah nama Tampermonkey pada daftar ekstensi.
    * Pastikan toggle berada di posisi Enabled (Aktif).
- * Buka Dashboard Tampermonkey:
+6. Buka Dashboard Tampermonkey:
    * Kembali ke halaman utama Edge.
    * Klik ikon menu (tiga garis horizontal).
    * Masuk ke Extensions, lalu klik Tampermonkey.
- * Buat Skrip Baru:
+7. Buat Skrip Baru:
    * Di dashboard Tampermonkey, klik Create a new script (Buat skrip baru).
- * Tempel Kode Skrip:
+8. Tempel Kode Skrip:
    * Hapus semua kode default yang muncul di editor Tampermonkey.
-   * Gantikan dengan kode skrip terbaru dari repositori ini: CBT Anti-Cheat Bypass v3.0 Script.
- * Ganti Alamat Web CBT:
+   * Gantikan dengan kode skrip terbaru dari repositori ini: [CBT Anti-Cheat Bypass v3.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code).
+9. Ganti Alamat Web CBT:
    * Pada bagian awal kode, cari baris:
      // @match      *://<website_address>/*
 // @namespace    *://<website_address>/*
@@ -49,7 +49,7 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
        // @match        https://ujian.sekolahku.ac.id/*
 // @namespace    https://ujian.sekolahku.ac.id/*
 
-   * Jika Anda masih bingung mengenai pengaplikasiannya, silakan lihat panduan ini: Bantuan Pengaplikasian Alamat Web.
+10. Jika Anda masih bingung mengenai pengaplikasiannya, silakan lihat panduan ini: [Bantuan Pengaplikasian Alamat Web](https://github.com/AX271/CBT-Bypass/blob/main/help).
  * Simpan Skrip: Klik File > Save (di pojok kiri atas editor).
  * Aktifkan Skrip:
    * Pergi ke bagian Installed Userscripts (Skrip Pengguna Terinstal) di Tampermonkey.
@@ -57,19 +57,37 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang alamatnya sudah Anda masukkan.
    
 B. Untuk Android (Non-Root)
-Untuk pengguna Android tanpa akses root, Anda dapat menggunakan browser yang mendukung ekstensi Tampermonkey.
- * Unduh Browser: Instal Via browser Browser dari Google Play Store. Via Browser memiliki dukungan ekstensi Chrome.
- * Langkah Selanjutnya: Ikuti langkah-langkah 3 hingga 12 pada bagian "Untuk Browser Desktop" di atas, karena proses instalasi Tampermonkey dan skrip di Via Browser mirip dengan browser desktop.
+Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan untuk mengimplementasikan skrip ini karena mendukung fitur injeksi skrip.
+ * Unduh Via Browser: Instal aplikasi Via Browser melalui Google Play Store [Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp).
+ * Buka Via Browser: Jalankan aplikasi Via Browser.
+ * Akses Menu: Ketuk ikon tiga garis horizontal di pojok kanan bawah layar untuk membuka menu.
+ * Masuk ke Pengaturan: Pilih opsi Setting.
+ * Pilih Script: Dari menu pengaturan, ketuk Script.
+ * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini (CBT Anti-Cheat Bypass v3.0 Script) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Sesuaikan Alamat Web CBT:
+   * Pada bagian awal kode, temukan baris:
+     // @match        *://<website_address>/*
+// @namespace    *://<website_address>/*
+
+   * Ganti *://<website_address>/* dengan URL lengkap dari situs web CBT yang Anda targetkan.
+     * Contoh: Jika URL CBT Anda adalah https://ujian.sekolahku.ac.id/, ubah menjadi:
+       // @match        https://ujian.sekolahku.ac.id/*
+// @namespace    https://ujian.sekolahku.ac.id/*
+
+   * Untuk panduan lebih lanjut mengenai penyesuaian alamat web, silakan merujuk pada: [Bantuan Pengaplikasian Alamat Web](https://github.com/AX271/CBT-Bypass/blob/main/help).
+ * Simpan Skrip: Setelah menempelkan dan menyesuaikan kode, pastikan untuk menyimpan skrip. Umumnya, terdapat ikon ceklis atau tombol simpan di antarmuka editor.
+ * Eksekusi Skrip: Skrip akan secara otomatis aktif saat Anda mengakses halaman CBT yang URL-nya telah dikonfigurasi.
    
 C. Untuk Android (Root)
 Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih dalam dengan Zygisk Next dan LSPosed untuk injeksi skrip yang lebih stealth.
  * Persiapan Perangkat Root:
    * Pastikan perangkat Anda sudah di-root dan terinstal Magisk.
-   * Instal LSPosed Framework melalui Magisk (gunakan versi Zygisk).
-   * Instal Zygisk Next (jika diperlukan untuk kompatibilitas modul).
+   * Instal [LSPosed Framework](https://github.com/LSPosed/LSPosed) melalui Magisk (gunakan versi Zygisk).
+   * Instal [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext) (jika diperlukan untuk kompatibilitas modul).
  * Instal Modul LSPosed:
    * Buka aplikasi LSPosed Manager.
-   * Cari dan unduh modul LSP ChromeXT atau modul sejenis yang memungkinkan injeksi skrip JavaScript ke dalam browser.
+   * Cari dan unduh modul LSP [ChromeXT](https://github.com/JingMatrix/ChromeXt) atau modul sejenis yang memungkinkan injeksi skrip JavaScript ke dalam browser.
    * Aktifkan modul tersebut di LSPosed Manager.
  * Konfigurasi Modul:
    * Buka pengaturan modul LSP ChromeXT.
