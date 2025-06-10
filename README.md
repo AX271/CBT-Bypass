@@ -58,8 +58,8 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
    
 B. Untuk Android (Non-Root)
 Untuk pengguna Android tanpa akses root, Anda dapat menggunakan browser yang mendukung ekstensi Tampermonkey.
- * Unduh Browser: Instal browser Kiwi Browser dari Google Play Store. Kiwi Browser memiliki dukungan ekstensi Chrome.
- * Langkah Selanjutnya: Ikuti langkah-langkah 3 hingga 12 pada bagian "Untuk Browser Desktop" di atas, karena proses instalasi Tampermonkey dan skrip di Kiwi Browser mirip dengan browser desktop.
+ * Unduh Browser: Instal Via browser Browser dari Google Play Store. Via Browser memiliki dukungan ekstensi Chrome.
+ * Langkah Selanjutnya: Ikuti langkah-langkah 3 hingga 12 pada bagian "Untuk Browser Desktop" di atas, karena proses instalasi Tampermonkey dan skrip di Via Browser mirip dengan browser desktop.
    
 C. Untuk Android (Root)
 Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih dalam dengan Zygisk Next dan LSPosed untuk injeksi skrip yang lebih stealth.
