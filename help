@@ -10,7 +10,7 @@ contoh URL: (https://cbt.platform.com)
 2. ganti bagian:
 // @match        *://<website_address>/*
 dengan domain website. Contoh  hasil:
-// @match        https://cbt.platform.com/*
+// @match        *://cbt.platform.com/*
 
 3. Sehingga hasil keseluruhannya menjadi:
 // ==UserScript==
