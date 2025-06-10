@@ -153,25 +153,43 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang alamatnya sudah Anda masukkan.
    
 B. Untuk Android (Non-Root)
-Untuk pengguna Android tanpa akses root, Anda dapat menggunakan browser yang mendukung ekstensi Tampermonkey.
- * Unduh Browser: Instal browser Kiwi Browser dari Google Play Store. Kiwi Browser memiliki dukungan ekstensi Chrome.
- * Langkah Selanjutnya: Ikuti langkah-langkah 3 hingga 12 pada bagian "Untuk Browser Desktop" di atas, karena proses instalasi Tampermonkey dan skrip di Kiwi Browser mirip dengan browser desktop.
+Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan untuk mengimplementasikan skrip ini karena mendukung fitur injeksi skrip.
+ * Unduh Via Browser: Instal aplikasi Via Browser melalui Google Play Store [Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp).
+ * Buka Via Browser: Jalankan aplikasi Via Browser.
+ * Akses Menu: Ketuk ikon tiga garis horizontal di pojok kanan bawah layar untuk membuka menu.
+ * Masuk ke Pengaturan: Pilih opsi Setting.
+ * Pilih Script: Dari menu pengaturan, ketuk Script.
+ * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini (CBT Anti-Cheat Bypass v3.0 Script) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Sesuaikan Alamat Web CBT:
+   * Pada bagian awal kode, temukan baris:
+     // @match        *://<website_address>/*
+// @namespace    *://<website_address>/*
+
+   * Ganti *://<website_address>/* dengan URL lengkap dari situs web CBT yang Anda targetkan.
+     * Contoh: Jika URL CBT Anda adalah https://ujian.sekolahku.ac.id/, ubah menjadi:
+       // @match        https://ujian.sekolahku.ac.id/*
+// @namespace    https://ujian.sekolahku.ac.id/*
+
+   * Untuk panduan lebih lanjut mengenai penyesuaian alamat web, silakan merujuk pada: [Bantuan Pengaplikasian Alamat Web](https://github.com/AX271/CBT-Bypass/blob/main/help).
+ * Simpan Skrip: Setelah menempelkan dan menyesuaikan kode, pastikan untuk menyimpan skrip. Umumnya, terdapat ikon ceklis atau tombol simpan di antarmuka editor.
+ * Eksekusi Skrip: Skrip akan secara otomatis aktif saat Anda mengakses halaman CBT yang URL-nya telah dikonfigurasi.
    
 C. Untuk Android (Root)
 Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih dalam dengan Zygisk Next dan LSPosed untuk injeksi skrip yang lebih stealth.
  * Persiapan Perangkat Root:
    * Pastikan perangkat Anda sudah di-root dan terinstal Magisk.
-   * Instal LSPosed Framework melalui Magisk (gunakan versi Zygisk).
-   * Instal Zygisk Next (jika diperlukan untuk kompatibilitas modul).
+   * Instal [LSPosed Framework](https://github.com/LSPosed/LSPosed) melalui Magisk (gunakan versi Zygisk).
+   * Instal [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext) (jika diperlukan untuk kompatibilitas modul).
  * Instal Modul LSPosed:
    * Buka aplikasi LSPosed Manager.
-   * Cari dan unduh modul LSP ChromeXT atau modul sejenis yang memungkinkan injeksi skrip JavaScript ke dalam browser.
+   * Cari dan unduh modul LSP [ChromeXT](https://github.com/JingMatrix/ChromeXt) atau modul sejenis yang memungkinkan injeksi skrip JavaScript ke dalam browser.
    * Aktifkan modul tersebut di LSPosed Manager.
  * Konfigurasi Modul:
    * Buka pengaturan modul LSP ChromeXT.
    * Cari opsi untuk menambahkan skrip kustom atau user script.
    * Tempelkan kode skrip CBT Anti-Cheat Bypass v3.0 Anda ke area yang disediakan.
-   * Pastikan Anda telah mengganti */your_web_address/* dengan alamat web CBT yang benar.
+   * Pastikan Anda telah mengganti *://<website_address>/* dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda (biasanya di Chrome).
