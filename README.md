@@ -152,13 +152,13 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
    * Di dashboard Tampermonkey, klik Create a new script (Buat skrip baru).
  * Tempel Kode Skrip:
    * Hapus semua kode default yang muncul di editor Tampermonkey.
-   * Gantikan dengan kode skrip terbaru dari repositori ini: CBT Anti-Cheat Bypass v3.0 Script.
+   * Gantikan dengan kode skrip terbaru dari repositori ini: [CBT Anti-Cheat Bypass v3.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code).
  * Ganti Alamat Web CBT:
    * Pada bagian awal kode, cari baris:
      // @match        */your_web_address/*
 // @namespace    */your_web_address/*
 
-   * Ganti */your_web_address/* dengan alamat lengkap (URL) situs web CBT yang Anda gunakan.
+   * Ganti *://<website_address>/* dengan alamat lengkap (URL) situs web CBT yang Anda gunakan.
      * Contoh: Jika alamat CBT Anda https://ujian.sekolahku.ac.id/, maka ubah menjadi:
        // @match        https://ujian.sekolahku.ac.id/*
 // @namespace    https://ujian.sekolahku.ac.id/*
@@ -178,7 +178,7 @@ Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan un
  * Masuk ke Pengaturan: Pilih opsi Setting.
  * Pilih Script: Dari menu pengaturan, ketuk Script.
  * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
- * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini (CBT Anti-Cheat Bypass v3.0 Script) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v3.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
  * Sesuaikan Alamat Web CBT:
    * Pada bagian awal kode, temukan baris:
      // @match        *://<website_address>/*
@@ -206,7 +206,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
  * Konfigurasi Modul:
    * Buka pengaturan modul LSP ChromeXT.
    * Cari opsi untuk menambahkan skrip kustom atau user script.
-   * Tempelkan kode skrip CBT Anti-Cheat Bypass v3.0 Anda ke area yang disediakan.
+   * Tempelkan kode skrip [CBT Anti-Cheat Bypass v3.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) Anda ke area yang disediakan.
    * Pastikan Anda telah mengganti *://<website_address>/* dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
