@@ -1,173 +1,84 @@
 // ==UserScript==
-// @name         CBT Anti-Cheat Bypass 2.3
-// @namespace    cbt-bypass-v2.3
-// @version      2.3
-// @description  Full bypass anti-cheat: reactive state reset, tab visibility, copy text, WS/log block, iframe neutralizer, fullscreen spoof
+// @name         CBT Anti-Cheat Bypass v3.0
+// @namespace    *://<website_address>/*
+// @version      3.0
+// @description  Full anti-cheat bypass: reset state, fake tab visibility, allow copy, block logging, spoof window size
 // @author       N/A
 // @match        *://<website_address>/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
 
-// Males remove console
-console.log = () => {};
-console.warn = () => {};
-
 (function () {
     'use strict';
 
-    // Block cheat-related event listeners
-    const blockedEvents = [
-        'visibilitychange',
-        'blur',
-        'focus',
-        'contextmenu',
-        'keydown',
-        'fullscreenchange',
-        'fullscreenerror'
-    ];
-    const originalAddEvent = EventTarget.prototype.addEventListener;
+    // ➤ Block cheat-related event listeners
+    const blockedEvents = ['visibilitychange', 'blur', 'focus', 'contextmenu', 'keydown'];
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
     EventTarget.prototype.addEventListener = function (type, listener, options) {
         if (blockedEvents.includes(type)) return;
-        return originalAddEvent.call(this, type, listener, options);
+        return originalAddEventListener.call(this, type, listener, options);
     };
 
-    // Force visibility always active
+    // ➤ Always visible tab
     Object.defineProperty(document, 'hidden', { get: () => false });
     Object.defineProperty(document, 'visibilityState', { get: () => 'visible' });
 
-    // Spoof fullscreen state
-    Object.defineProperty(document, 'fullscreenElement', {
-        get: () => document.documentElement
+    // ➤ Spoof screen size for floating window detection
+    Object.defineProperty(window, 'innerHeight', {
+        get: () => window.screen.height
     });
-    document.exitFullscreen = function () {
-        console.warn("[CBT Bypass] Blocked exitFullscreen");
-        return Promise.resolve();
-    };
+    Object.defineProperty(screen, 'availHeight', {
+        get: () => window.screen.height
+    });
+    window.addEventListener('resize', e => e.stopImmediatePropagation(), true);
 
-    // Headless browser identity protection
-    Object.defineProperty(navigator, 'webdriver', { get: () => false });
-    Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3] });
-
-    // Patch session-config.fullScreen = true
-    setInterval(() => {
-        try {
-            const session = JSON.parse(sessionStorage.getItem("session-config"));
-            if (session && session.fullScreen !== true) {
-                session.fullScreen = true;
-                sessionStorage.setItem("session-config", JSON.stringify(session));
-            }
-        } catch (e) {}
-    }, 3000);
-
-    // Patch session state if cheating is detected
+    // ➤ Patch sessionStorage config
     const patchState = () => {
         try {
             const raw = sessionStorage.getItem("root-config");
             if (!raw) return;
             const json = JSON.parse(raw);
             if (!json.state) return;
-
-            // Reset if any sign of cheating
             if (json.state.hasCheat || json.state.totalMove > 0) {
-                console.warn("[CBT Bypass] Resetting hasCheat and totalMove...");
                 json.state.hasCheat = false;
                 json.state.totalMove = 0;
                 sessionStorage.setItem("root-config", JSON.stringify(json));
             }
-        } catch (e) {
-            console.warn("[CBT Bypass] Patch error:", e);
-        }
-    };
- 
-    // Bypass Vue Reactive Anti-Cheat Store
-    const patchVueReactiveStore = () => {
-        for (const key in window) {
-            const obj = window[key];
-            if (
-                obj &&
-                typeof obj === 'object' &&
-                'hasCheat' in obj &&
-                'totalMove' in obj &&
-                'userSessionExam' in obj
-            ) {
-                console.log("[CBT Bypass] Vue anti-cheat state found:", key);
-
-                Object.defineProperty(obj, 'hasCheat', {
-                    get() { return false; },
-                    set(v) { console.warn("[CBT Bypass] Blocked hasCheat =", v); }
-                });
-
-                Object.defineProperty(obj, 'totalMove', {
-                    get() { return 0; },
-                    set(v) { console.warn("[CBT Bypass] Blocked totalMove =", v); }
-                });
-
-                Object.defineProperty(obj, 'maximumMove', {
-                    get() { return 999; },
-                    set(v) { console.warn("[CBT Bypass] Blocked maximumMove =", v); }
-                });
-
-                return true;
-            }
-        }
-
-        return false;
+        } catch (_) {}
     };
 
-    // Enable text selection and right-click
+    // ➤ Enable text selection + right-click
     const enableText = () => {
         const apply = () => {
+            if (!document.body) return;
             document.body.style.userSelect = 'text';
             document.body.style.webkitUserSelect = 'text';
-            document.body.style.msUserSelect = 'text';
-            document.body.style.MozUserSelect = 'text';
             document.oncontextmenu = null;
         };
         document.addEventListener('DOMContentLoaded', apply);
         setTimeout(apply, 1000);
     };
 
-    // Intercept WebSocket and apply hiding
+    // ➤ Intercept WebSocket anti-cheat
     const interceptWebSocket = () => {
-        const realWebSocket = window.WebSocket;
-        const WebSocketProxy = new Proxy(realWebSocket, {
-            construct(target, args) {
-                const ws = new target(...args);
-                const realSend = ws.send;
-                ws.send = function (data) {
-                    if (typeof data === "string" && data.includes("cheat")) {
-                        console.warn("[CBT Bypass] Blocked WS message:", data);
-                        return;
-                    }
-                    return realSend.call(this, data);
-                };
-                return ws;
-            },
-            get(target, prop) {
-                return Reflect.get(target, prop);
-            }
-        });
-
-        // Change global WebSocket to proxy
-        Object.defineProperty(window, 'WebSocket', {
-            configurable: true,
-            enumerable: true,
-            get() {
-                return WebSocketProxy;
-            },
-            set(_) {
-               
-            }
-        });
+        const OriginalWebSocket = window.WebSocket;
+        window.WebSocket = function (url, protocols) {
+            const ws = new OriginalWebSocket(url, protocols);
+            const originalSend = ws.send;
+            ws.send = function (data) {
+                if (typeof data === "string" && data.includes("cheat")) return;
+                return originalSend.call(this, data);
+            };
+            return ws;
+        };
     };
 
-    // Intercept fetch and XHR logging
+    // ➤ Block fetch() & XHR log reports
     const interceptLogCalls = () => {
         const originalFetch = window.fetch;
         window.fetch = async function (...args) {
             if (typeof args[0] === "string" && args[0].includes("log")) {
-                console.warn("[CBT Bypass] Blocked fetch log to:", args[0]);
                 return new Response('{}', { status: 200 });
             }
             return originalFetch.apply(this, args);
@@ -180,8 +91,6 @@ console.warn = () => {};
 
             xhr.open = function (method, url, ...rest) {
                 if (url.includes("log") || url.includes("cheat")) {
-                    console.warn("[CBT Bypass] Blocked XHR to:", url);
-                    // Simulate dummy success
                     setTimeout(() => {
                         xhr.readyState = 4;
                         xhr.status = 200;
@@ -197,59 +106,20 @@ console.warn = () => {};
         };
     };
 
-    // Remove suspicious iframes
+    // ➤ Remove observer/monitoring iframes
     const removeIframes = () => {
         document.querySelectorAll("iframe").forEach(iframe => {
             const src = iframe.src || "";
             if (src.includes("monitor") || src.includes("observer") || src.includes("proctor")) {
-                console.warn("[CBT Bypass] Removing iframe:", src);
                 iframe.remove();
             }
         });
     };
 
-    // MutationObserver
-    const startObserver = () => {
-        const body = document.body;
-        if (!body) {
-            requestAnimationFrame(startObserver);
-            return;
-        }
-
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                if (mutation.type === 'attributes') {
-                    console.log('[CBT Bypass] Atribut berubah pada:', mutation.target);
-                }
-                if (mutation.type === 'childList') {
-                    mutation.addedNodes.forEach(node => {
-                        if (node.tagName === "IFRAME") {
-                            console.warn("[CBT Bypass] Iframe mencurigakan terdeteksi via observer:", node.src);
-                            node.remove();
-                        }
-                    });
-                }
-            });
-        });
-
-        observer.observe(body, {
-            attributes: true,
-            childList: true,
-            subtree: true
-        });
-    };
-
-    // Start all defenses
+    // ➤ Start all modules
     interceptWebSocket();
     interceptLogCalls();
     setInterval(patchState, 2000);
     setInterval(enableText, 3000);
     setInterval(removeIframes, 5000);
-
-    const vuePatchLoop = setInterval(() => {
-        const success = patchVueReactiveStore();
-        if (success) clearInterval(vuePatchLoop);
-    }, 1000);
-
-    startObserver();
 })();
