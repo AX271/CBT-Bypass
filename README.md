@@ -41,10 +41,10 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
    * Gantikan dengan kode skrip terbaru dari repositori ini: CBT Anti-Cheat Bypass v3.0 Script.
  * Ganti Alamat Web CBT:
    * Pada bagian awal kode, cari baris:
-     // @match        */your_web_address/*
-// @namespace    */your_web_address/*
+     // @match      *://<website_address>/*
+// @namespace    *://<website_address>/*
 
-   * Ganti */your_web_address/* dengan alamat lengkap (URL) situs web CBT yang Anda gunakan.
+   * Ganti *://<website_address>/* dengan alamat lengkap (URL) situs web CBT yang Anda gunakan.
      * Contoh: Jika alamat CBT Anda https://ujian.sekolahku.ac.id/, maka ubah menjadi:
        // @match        https://ujian.sekolahku.ac.id/*
 // @namespace    https://ujian.sekolahku.ac.id/*
