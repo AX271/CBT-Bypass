@@ -50,8 +50,8 @@ A. Untuk Browser Desktop (Disarankan Microsoft Edge)
 // @namespace    https://ujian.sekolahku.ac.id/*
 
 10. Jika Anda masih bingung mengenai pengaplikasiannya, silakan lihat panduan ini: [Bantuan Pengaplikasian Alamat Web](https://github.com/AX271/CBT-Bypass/blob/main/help).
- * Simpan Skrip: Klik File > Save (di pojok kiri atas editor).
- * Aktifkan Skrip:
+11. Simpan Skrip: Klik File > Save (di pojok kiri atas editor).
+12. Aktifkan Skrip:
    * Pergi ke bagian Installed Userscripts (Skrip Pengguna Terinstal) di Tampermonkey.
    * Pastikan toggle untuk skrip baru Anda sudah berwarna hijau (aktif). Jika belum, geser toggle hingga aktif.
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang alamatnya sudah Anda masukkan.
@@ -96,7 +96,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Pastikan Anda telah mengganti */your_web_address/* dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
- * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda (ikut cara non-root).
+ * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda (ikuti cara non-root).
       
 # 📝 Penjelasan & Pedoman Penggunaan
 1. Hal-Hal yang Harus Diperhatikan
