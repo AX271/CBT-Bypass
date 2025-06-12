@@ -67,11 +67,11 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
  * Konfigurasi Modul:
    * Buka pengaturan modul LSP ChromeXT.
    * Cari opsi untuk menambahkan skrip kustom atau user script.
-   * Tempelkan kode skrip CBT Anti-Cheat Bypass v4.0 Anda ke area yang disediakan.
+   * Tempelkan kode skrip [CBT Anti-Cheat Bypass v4.0](https://github.com/AX271/CBT-Bypass/blob/main/Code) Anda ke area yang disediakan.
    * Pastikan Anda telah mengganti *://<website_address>/* dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
- * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda (ikuti cara non-root).
+ * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda.
       
 # 📝 Penjelasan & Pedoman Penggunaan
 1. Hal-Hal yang Harus Diperhatikan
