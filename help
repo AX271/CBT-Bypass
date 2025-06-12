@@ -27,6 +27,29 @@ dengan domain website. Contoh  hasil:
 4. Jika tampilan sudah benar, maka pemasangan
 <website_address> sudah benar.
 
+#Discalimer:
+Jangan ganti bagian  '/*' dengan path website tertentu!
+skrip bisa gagal berjalan karena hal tersebut, baiknya 
+hanya  mengganti alamat dan membiarkan bagian path '/*' 
+tetap seperti preset skrip.
+
+Namun, pada bagian '*://' dapat diganti atau dibiarkan,
+karena ini hanya mengandung protokol, lebih baik untuk 
+membiarkannya jika anda tidak yakin dengan apa yang anda 
+perbuat.
+
+Contohnya:
+https://cbt.platform.com/*
+
+Namun anda menempelkannya sebagai:
+https://cbt.platform.com/login
+
+Hal ini sangat tidak direkomendasikan!
+karena '/*' menandakan semua path untuk 
+dieksekusi, jika anda hanya menambahkan 1
+maka skrip hanya bekerja untuk 1 halaman web
+tersebut, tidak untuk seluruhnya!
+
 #Peringatan!:
 Panduan diatas merupakan contoh kode lama,
 jika seandainya kode baru telah rilis, maka
