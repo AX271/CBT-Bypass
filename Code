@@ -1,125 +1,21 @@
 // ==UserScript==
-// @name         CBT Anti-Cheat Bypass v3.0
-// @namespace    *://<website_address>/*
-// @version      3.0
-// @description  Full anti-cheat bypass: reset state, fake tab visibility, allow copy, block logging, spoof window size
-// @author       N/A
-// @match        *://<website_address>/*
-// @run-at       document-start
+// @name         CBPS v4.0
+// @namespace    https://viayoo.com/
+// @version      4.0
+// @description  try to intercept web
+// @author       You
+// @run-at       document-end
+// @match        https://<website_address>/*
 // @grant        none
 // ==/UserScript==
 
-(function () {
-    'use strict';
-
-    // ➤ Block cheat-related event listeners
-    const blockedEvents = ['visibilitychange', 'blur', 'focus', 'contextmenu', 'keydown'];
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function (type, listener, options) {
-        if (blockedEvents.includes(type)) return;
-        return originalAddEventListener.call(this, type, listener, options);
-    };
-
-    // ➤ Always visible tab
-    Object.defineProperty(document, 'hidden', { get: () => false });
-    Object.defineProperty(document, 'visibilityState', { get: () => 'visible' });
-
-    // ➤ Spoof screen size for floating window detection
+(() => {
     Object.defineProperty(window, 'innerHeight', {
-        get: () => window.screen.height
+        get: () => screen.height
     });
     Object.defineProperty(screen, 'availHeight', {
-        get: () => window.screen.height
+        get: () => screen.height
     });
+
     window.addEventListener('resize', e => e.stopImmediatePropagation(), true);
-
-    // ➤ Patch sessionStorage config
-    const patchState = () => {
-        try {
-            const raw = sessionStorage.getItem("root-config");
-            if (!raw) return;
-            const json = JSON.parse(raw);
-            if (!json.state) return;
-            if (json.state.hasCheat || json.state.totalMove > 0) {
-                json.state.hasCheat = false;
-                json.state.totalMove = 0;
-                sessionStorage.setItem("root-config", JSON.stringify(json));
-            }
-        } catch (_) {}
-    };
-
-    // ➤ Enable text selection + right-click
-    const enableText = () => {
-        const apply = () => {
-            if (!document.body) return;
-            document.body.style.userSelect = 'text';
-            document.body.style.webkitUserSelect = 'text';
-            document.oncontextmenu = null;
-        };
-        document.addEventListener('DOMContentLoaded', apply);
-        setTimeout(apply, 1000);
-    };
-
-    // ➤ Intercept WebSocket anti-cheat
-    const interceptWebSocket = () => {
-        const OriginalWebSocket = window.WebSocket;
-        window.WebSocket = function (url, protocols) {
-            const ws = new OriginalWebSocket(url, protocols);
-            const originalSend = ws.send;
-            ws.send = function (data) {
-                if (typeof data === "string" && data.includes("cheat")) return;
-                return originalSend.call(this, data);
-            };
-            return ws;
-        };
-    };
-
-    // ➤ Block fetch() & XHR log reports
-    const interceptLogCalls = () => {
-        const originalFetch = window.fetch;
-        window.fetch = async function (...args) {
-            if (typeof args[0] === "string" && args[0].includes("log")) {
-                return new Response('{}', { status: 200 });
-            }
-            return originalFetch.apply(this, args);
-        };
-
-        const originalXHR = window.XMLHttpRequest;
-        window.XMLHttpRequest = function () {
-            const xhr = new originalXHR();
-            const open = xhr.open;
-
-            xhr.open = function (method, url, ...rest) {
-                if (url.includes("log") || url.includes("cheat")) {
-                    setTimeout(() => {
-                        xhr.readyState = 4;
-                        xhr.status = 200;
-                        xhr.responseText = "{}";
-                        xhr.onload?.();
-                    }, 100);
-                    return;
-                }
-                return open.apply(xhr, [method, url, ...rest]);
-            };
-
-            return xhr;
-        };
-    };
-
-    // ➤ Remove observer/monitoring iframes
-    const removeIframes = () => {
-        document.querySelectorAll("iframe").forEach(iframe => {
-            const src = iframe.src || "";
-            if (src.includes("monitor") || src.includes("observer") || src.includes("proctor")) {
-                iframe.remove();
-            }
-        });
-    };
-
-    // ➤ Start all modules
-    interceptWebSocket();
-    interceptLogCalls();
-    setInterval(patchState, 2000);
-    setInterval(enableText, 3000);
-    setInterval(removeIframes, 5000);
 })();
