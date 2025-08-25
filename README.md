@@ -6,6 +6,21 @@ Dokumentasi ini dibuat untuk membantu pengguna memahami dan mengimplementasikan 
 
 Skrip ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar proteksi anti-cheat bisa dicegah untuk bekerja.
 
+# 📱 Minimum Requirements (Update 2025)
+
+✅ Direkomendasikan:
+- Android 10 atau lebih baru
+- **RAM 4GB atau lebih**
+- Support Floating Apps atau Split-Screen
+- Browser: **[Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp).**
+- ROM biasa (MIUI, One UI, ColorOS full), bukan *Go* atau *Core edition*
+
+❌ Tidak didukung di:
+- Android Go Edition
+- One UI Core
+- ROM modifikasi "lite" atau bloat-trimmed
+- HP dengan RAM 3GB atau kurang
+
 # 💡 Fitur Utama Skrip (v4.0)
 - ✅ Paksa `window.innerHeight` agar selalu sama dengan `screen.height`
 - ✅ Paksa `screen.availHeight` agar selalu sama dengan `screen.height`
@@ -94,12 +109,18 @@ Untuk meminimalkan risiko, perhatikan hal-hal berikut:
  * Gunakan Skrip Ini Hanya untuk Simulasi, Debug, atau Proyek Pribadi: Sangat disarankan untuk menggunakan skrip ini hanya untuk tujuan pengujian, debugging, atau simulasi pada halaman CBT tiruan atau pribadi.
  * Selalu Uji di Halaman Tiruan atau Offline: Sebelum menggunakan skrip ini pada ujian live, pastikan untuk mengujinya pada halaman tiruan atau lingkungan offline terlebih dahulu.
  * Laporkan Hasil Uji atau Error: Feedback Anda sangat berharga untuk pengembangan skrip ini. Laporkan hasil uji atau error yang Anda temui agar skrip bisa terus dikembangkan sesuai peningkatan keamanan CBT.
-   
+
 # ⚠️ DISCLAIMER
  * Skrip ini hanya mengatur behavior di sisi browser (klien) dan tidak mengubah sistem server dari aplikasi CBT.
  * Penggunaan skrip ini adalah tanggung jawab pengguna sepenuhnya.
  * Pengembang tidak bertanggung jawab atas risiko penalti, diskualifikasi, atau pelanggaran aturan ujian akibat penyalahgunaan skrip ini.
 Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba Anda! Terima kasih sudah membaca dan semangat mencoba!
+
+---
+> Saya yang membuat skrip ini, awalnya hanya ingin tahu apakah sistem CBT bisa ditembus.  
+Saya tidak berniat membuat orang lain tergoda untuk memakai ini saat ujian semester.
+
+---
 
 # 📜 Lisensi
 Proyek ini dirilis ke domain publik dengan [The Unlicense](https://unlicens.org/).
