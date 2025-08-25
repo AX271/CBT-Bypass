@@ -42,14 +42,20 @@ Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan un
  * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
  * Sesuaikan Alamat Web CBT:
    * Pada bagian awal kode, temukan baris:
-     // @match        *://<website_address>/*
+```bash
+// @match        *://<website_address>/*
+```
+```bash
 // @namespace    *://<website_address>/*
-
-   * Ganti *://<website_address>/* dengan URL lengkap dari situs web CBT yang Anda targetkan.
-     * Contoh: Jika URL CBT Anda adalah https://ujian.sekolahku.ac.id/, ubah menjadi:
-       // @match        https://ujian.sekolahku.ac.id/*
+```
+   * Ganti ```*://<website_address>/*``` dengan URL lengkap dari situs web CBT yang Anda targetkan.
+     * Contoh: Jika URL CBT Anda adalah ```https://ujian.sekolahku.ac.id/```, ubah menjadi:
+```bash
+// @match        https://ujian.sekolahku.ac.id/*
+```
+```bash
 // @namespace    https://ujian.sekolahku.ac.id/*
-
+```
    * Untuk panduan lebih lanjut mengenai penyesuaian alamat web, silakan merujuk pada: [Bantuan Pengaplikasian Alamat Web](https://github.com/AX271/CBT-Bypass/blob/main/help).
  * Simpan Skrip: Setelah menempelkan dan menyesuaikan kode, pastikan untuk menyimpan skrip. Umumnya, terdapat ikon ceklis atau tombol simpan di antarmuka editor.
  * Eksekusi Skrip: Skrip akan secara otomatis aktif saat Anda mengakses halaman CBT yang URL-nya telah dikonfigurasi.
@@ -68,7 +74,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Buka pengaturan modul LSP ChromeXT.
    * Cari opsi untuk menambahkan skrip kustom atau user script.
    * Tempelkan kode skrip [CBT Anti-Cheat Bypass v4.0](https://github.com/AX271/CBT-Bypass/blob/main/Code) Anda ke area yang disediakan.
-   * Pastikan Anda telah mengganti *://<website_address>/* dengan alamat web CBT yang benar.
+   * Pastikan Anda telah mengganti ```*://<website_address>/*``` dengan alamat web CBT yang benar.
    * Simpan konfigurasi modul.
  * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
  * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda.
