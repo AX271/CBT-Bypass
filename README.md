@@ -1,4 +1,4 @@
-# 🚀 CBT Anti-Cheat Bypass v4.0
+# 🚀 CBT Anti-Cheat Bypass v4.1
 
 _⚠️ Peringatan: Panduan ini mungkin tidak berfungsi sepenuhnya untuk semua jenis sistem Computer-Based Test (CBT). Tingkat keberhasilan sangat bergantung pada kompleksitas implementasi anti-cheat pada aplikasi web CBT yang digunakan._
 
