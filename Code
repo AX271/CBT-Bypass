@@ -1,21 +1,119 @@
 // ==UserScript==
-// @name         CBPS v4.0
+// @name         CBPS v4.1
 // @namespace    https://viayoo.com/
-// @version      4.0
-// @description  try to intercept web
+// @version      4.1
+// @description  Improved interception for mobile height/resize handling
 // @author       You
-// @run-at       document-end
+// @run-at       document-start
 // @match        https://<website_address>/*
 // @grant        none
 // ==/UserScript==
 
 (() => {
-    Object.defineProperty(window, 'innerHeight', {
-        get: () => screen.height
-    });
-    Object.defineProperty(screen, 'availHeight', {
-        get: () => screen.height
-    });
+    'use strict';
 
-    window.addEventListener('resize', e => e.stopImmediatePropagation(), true);
+    const getDeviceHeight = () => {
+        try {
+            return (window.outerHeight || (window.screen && window.screen.height) || document.documentElement.clientHeight || window.innerHeight || 0) | 0;
+        } catch (e) {
+            return 0;
+        }
+    };
+
+    const getDeviceWidth = () => {
+        try {
+            return (window.outerWidth || (window.screen && window.screen.width) || document.documentElement.clientWidth || window.innerWidth || 0) | 0;
+        } catch (e) {
+            return 0;
+        }
+    };
+
+    function applyCssHeight(h) {
+        try {
+            const docEl = document.documentElement;
+            const body = document.body;
+            if (docEl) {
+                docEl.style.minHeight = `${h}px`;
+                docEl.style.height = `${h}px`;
+            }
+            if (body) {
+                body.style.minHeight = `${h}px`;
+                body.style.height = `${h}px`;
+            }
+            const vh = (h / 100);
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        } catch (e) {}
+    }
+
+    const overrides = [];
+    try {
+        Object.defineProperty(window, 'innerHeight', { configurable: true, get: () => getDeviceHeight() });
+        overrides.push('innerHeight');
+    } catch (e) {}
+
+    try {
+        Object.defineProperty(window, 'innerWidth', { configurable: true, get: () => getDeviceWidth() });
+        overrides.push('innerWidth');
+    } catch (e) {}
+
+    try {
+        const realVV = window.visualViewport;
+        const makeVV = () => ({
+            get height() { return getDeviceHeight(); },
+            get width() { return getDeviceWidth(); },
+            get scale() { return (realVV && realVV.scale) || 1; },
+            addEventListener(type, fn, opts) {
+                if (!type) return;
+                if (type === 'resize' || type === 'orientationchange') return;
+                if (realVV && typeof realVV.addEventListener === 'function') return realVV.addEventListener(type, fn, opts);
+            },
+            removeEventListener(type, fn, opts) {
+                if (realVV && typeof realVV.removeEventListener === 'function') return realVV.removeEventListener(type, fn, opts);
+            }
+        });
+        Object.defineProperty(window, 'visualViewport', { configurable: true, get: makeVV });
+        overrides.push('visualViewport');
+    } catch (e) {}
+
+    try {
+        if (window.screen) {
+            try { Object.defineProperty(screen, 'availHeight', { configurable: true, get: () => getDeviceHeight() }); overrides.push('screen.availHeight'); } catch (e) {}
+            try { Object.defineProperty(screen, 'height', { configurable: true, get: () => getDeviceHeight() }); overrides.push('screen.height'); } catch (e) {}
+        }
+    } catch (e) {}
+
+    const blockedEvents = new Set(['resize', 'orientationchange']);
+    const origAdd = EventTarget.prototype.addEventListener;
+    const origRemove = EventTarget.prototype.removeEventListener;
+
+    EventTarget.prototype.addEventListener = function (type, listener, options) {
+        try { if (typeof type === 'string' && blockedEvents.has(type)) return; } catch (e) {}
+        return origAdd.call(this, type, listener, options);
+    };
+
+    EventTarget.prototype.removeEventListener = function (type, listener, options) {
+        return origRemove.call(this, type, listener, options);
+    };
+
+    const origDispatch = EventTarget.prototype.dispatchEvent;
+    EventTarget.prototype.dispatchEvent = function (ev) {
+        try { if (ev && typeof ev.type === 'string' && blockedEvents.has(ev.type)) return false; } catch (e) {}
+        return origDispatch.call(this, ev);
+    };
+
+    try { Object.defineProperty(window, 'onresize', { configurable: true, get() { return null; }, set(_) {} }); } catch (e) {}
+
+    const applyNow = () => { const h = getDeviceHeight() || 1; applyCssHeight(h); };
+    applyNow();
+
+    try {
+        const mo = new MutationObserver(() => applyNow());
+        if (document && document.documentElement) mo.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
+        document.addEventListener && document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') applyNow(); }, { passive: true });
+        const reinforceInterval = setInterval(applyNow, 750);
+        window.__CBPS_restore = () => { try { clearInterval(reinforceInterval); mo.disconnect(); EventTarget.prototype.addEventListener = origAdd; EventTarget.prototype.removeEventListener = origRemove; EventTarget.prototype.dispatchEvent = origDispatch; } catch (e) {} };
+    } catch (e) {}
+
+    try { window.__CBPS_info = { overrides, blockedEvents: Array.from(blockedEvents) }; } catch (e) {}
+
 })();
