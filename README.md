@@ -87,12 +87,37 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Aktifkan modul tersebut di LSPosed Manager.
  * Konfigurasi Modul:
    * Buka pengaturan modul LSP ChromeXT.
-   * Cari opsi untuk menambahkan skrip kustom atau user script.
-   * Tempelkan kode skrip [CBT Anti-Cheat Bypass v4.0](https://github.com/AX271/CBT-Bypass/blob/main/Code) Anda ke area yang disediakan.
-   * Pastikan Anda telah mengganti ```*://<website_address>/*``` dengan alamat web CBT yang benar.
-   * Simpan konfigurasi modul.
- * Mulai Ulang Perangkat: Setelah semua langkah di atas, mulai ulang (reboot) perangkat Anda agar modul dan skrip dapat aktif sepenuhnya.
- * Jalankan Skrip: Skrip akan berjalan secara otomatis saat Anda membuka laman CBT yang sudah dikonfigurasi di browser Anda.
+   * Cari module LSP ChromeXT
+   * Klik module LSP ChromeXT
+   * Konfigurasikan dengan mencentang peramban yang akan digunakan.
+
+ * Pengaplikasian Modul
+   * Unduh Via Browser: Instal aplikasi Via Browser melalui Google Play Store [Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp).
+   * Buka Via Browser: Jalankan aplikasi Via Browser.
+   * Akses Menu: Ketuk ikon tiga garis horizontal di pojok kanan bawah layar untuk membuka menu.
+   * Masuk ke Pengaturan: Pilih opsi Setting.
+   * Pilih Script: Dari menu pengaturan, ketuk Script.
+   * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
+   * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+    * Sesuaikan Alamat Web CBT:
+    * Pada bagian awal kode, temukan baris:
+```bash
+// @match        *://<website_address>/*
+```
+```bash
+// @namespace    *://<website_address>/*
+```
+  * Ganti ```*://<website_address>/*``` dengan URL lengkap dari situs web CBT yang Anda targetkan.
+     * Contoh: Jika URL CBT Anda adalah ```https://ujian.sekolahku.ac.id/```, ubah menjadi:
+```bash
+// @match        https://ujian.sekolahku.ac.id/*
+```
+```bash
+// @namespace    https://ujian.sekolahku.ac.id/*
+```
+
+  * Simpan Skrip: Setelah menempelkan dan menyesuaikan kode, pastikan untuk menyimpan skrip. Umumnya, terdapat ikon ceklis atau tombol simpan di antarmuka editor.
+  * Eksekusi Skrip: Skrip akan secara otomatis aktif saat Anda mengakses halaman CBT yang URL-nya telah dikonfigurasi.
       
 # 📝 Penjelasan & Pedoman Penggunaan
 1. Hal-Hal yang Harus Diperhatikan
