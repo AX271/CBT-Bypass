@@ -16,7 +16,7 @@ You WILL NOT use these materials to:
    • engage in any activity that violates applicable laws or terms of service of third parties.
 
 3) RESPONSIBLE DISCLOSURE
-If you discover a vulnerability in a third-party system while using these materials, you must follow responsible disclosure procedures. Contact the system owner and/or AX271 at <CONTACT_EMAIL_OR_ADDRESS> before publicly disclosing details or exploits.
+If you discover a vulnerability in a third-party system while using these materials, you must follow responsible disclosure procedures. Please report the issue via GitHub Issues using the "security" or "legal/takedown" template. After verification, a private communication channel will be provided for further details. Do not publicly disclose vulnerabilities before verification.
 
 4) ASSUMPTION OF RISK & INDEMNITY
 You assume all risk associated with your use of this repository. You agree to indemnify and hold AX271 harmless from any claims, damages, liabilities, or costs resulting from your use or misuse of the materials.
@@ -25,7 +25,7 @@ You assume all risk associated with your use of this repository. You agree to in
 If you intend to use these materials for testing on systems you do not own, obtain and retain WRITTEN AUTHORIZATION from the system owner and keep records of such authorization. Failure to provide proof of authorization upon request may be treated as a breach of these terms.
 
 6) TAKEDOWN & CONTACT
-If you are a rights holder, system owner, or institution and request removal or have legal inquiries, please contact: <CONTACT_EMAIL_OR_ADDRESS>. Provide details and proof of ownership or authority.
+Rights holders, system owners, or institutions requesting removal or with legal inquiries should submit a report using GitHub Issues (security/legal-takedown). Verified requests will be provided with a private communication channel to discuss and provide proof of ownership or authority. Do not include sensitive information publicly.
 
 7) ACKNOWLEDGEMENT
 By using this repository you acknowledge that you have read, understood, and agreed to these terms.
