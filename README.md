@@ -141,12 +141,22 @@ Untuk meminimalkan risiko, perhatikan hal-hal berikut:
  * Pengembang tidak bertanggung jawab atas risiko penalti, diskualifikasi, atau pelanggaran aturan ujian akibat penyalahgunaan skrip ini.
 Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba Anda! Terima kasih sudah membaca dan semangat mencoba!
 
+# 🪞 Refleksi
 ---
 > Saya yang membuat skrip ini, awalnya hanya ingin tahu apakah sistem CBT bisa ditembus.  
 Saya tidak berniat membuat orang lain tergoda untuk memakai ini saat ujian semester.
-
 ---
 
 # 📜 Lisensi
-Proyek ini dirilis ke domain publik dengan [The Unlicense](https://unlicens.org/).
-Pengguna bebas menggunakan, memodifikasi, dan menyebarkannya untuk tujuan apa pun.
+Lisensi & Panduan Penggunaan
+----------------------------
+
+Proyek ini dilindungi oleh **lisensi proprietary khusus** yang dibuat oleh AX271.
+
+Kode, skrip, dan materi di repositori ini hanya boleh digunakan untuk **riset keamanan, tujuan edukasi, atau pengujian internal yang memiliki izin tertulis dari pemilik sistem**. Penggunaan lain, termasuk menyontek, melewati mekanisme anti-cheat, atau mengakses data tanpa izin, **dilarang keras**.
+
+**Pengguna sepenuhnya menanggung risiko hukum, akademik, atau konsekuensi lain yang timbul akibat penggunaan skrip ini di luar ketentuan di atas. AX271 tidak bertanggung jawab atas penyalahgunaan, kecurangan, atau pelanggaran hukum yang dilakukan pengguna.**
+
+Untuk ketentuan hukum lengkap, silakan lihat [LICENSE](./LICENSE) dan panduan [USAGE.md](./USAGE.md).
+
+Penggunaan yang tidak sah atau tidak etis dapat berakibat **penghentian lisensi otomatis dan kemungkinan tindakan hukum**.
