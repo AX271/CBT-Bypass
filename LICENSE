@@ -1,6 +1,36 @@
-Lisensi Unlicense
+COPYRIGHT (c) 2025 AX271
+ALL RIGHTS RESERVED
 
-Ini adalah karya bebas dan terbuka. Siapa pun bebas untuk menyalin, memodifikasi, menerbitkan, menggunakan, menyusun, menjual, atau mendistribusikan karya ini, baik secara komersial maupun non-komersial, dengan cara apa pun dan untuk tujuan apa pun, tanpa batasan.
-Dengan ini pemilik hak cipta melepaskan semua haknya atas karya ini di seluruh dunia berdasarkan undang-undang hak cipta, termasuk semua hak terkait dan hak tetangga, sejauh diizinkan oleh hukum.
-KARYA INI DISEDIAKAN "APA ADANYA", TANPA JAMINAN APA PUN, BAIK TERSURAT MAUPUN TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN KELAYAKAN UNTUK DIPERJUALBELIKAN ATAU KESESUAIAN UNTUK TUJUAN TERTENTU. PENGGUNA MENANGGUNG RISIKO ATAS SEGALA HAL YANG DILAKUKAN DENGAN KARYA INI.
-Untuk informasi lebih lanjut, kunjungi: https://unlicense.org/
+1. Grant of License
+Subject to the terms and conditions below, AX271 ("Owner") hereby grants you ("Licensee" or "You") a limited, non-exclusive, non-transferable, revocable license to view and use the materials in this repository solely for purposes of security research, education, and internal testing with EXPRESS WRITTEN PERMISSION from the owner of the system under test. Any other use is strictly prohibited unless expressly authorized in writing by AX271.
+
+2. Prohibited Uses
+You may not use, copy, modify, distribute, sublicense, publish, or otherwise make available the materials in this repository for the purpose of:
+  a) circumventing, disabling, or otherwise defeating anti-cheat, monitoring, or integrity mechanisms of examination systems (including but not limited to CBT platforms), or
+  b) accessing, extracting, altering, or exfiltrating data to which you do not have explicit permission, or
+  c) facilitating academic dishonesty, fraud, or any unlawful act.
+
+Breach of any provision in this Section 2 will result in automatic termination of this license and may subject the Licensee to civil and/or criminal liability.
+
+3. No Warranty
+THE MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. AX271 DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. AX271 DOES NOT WARRANT THAT THE MATERIALS ARE SAFE, ERROR-FREE, OR FREE FROM VULNERABILITIES.
+
+4. Limitation of Liability
+IN NO EVENT SHALL AX271 BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE MATERIALS, EVEN IF AX271 HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+5. Indemnification
+By using the materials, You agree to defend, indemnify, and hold harmless AX271 and its officers, agents, and contributors from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in any way connected with:
+  a) your breach of Section 2 (Prohibited Uses); or
+  b) your violation of any applicable law, regulation, or third-party rights in connection with your use of the materials.
+
+6. Termination
+This license is effective until terminated. AX271 may terminate this license immediately and without notice if You breach any provision herein. Upon termination, You must cease all use of the materials and destroy all copies in your possession or control.
+
+7. Enforcement & Governing Law
+This License shall be governed by and construed in accordance with the laws of <JURISDICTION: COUNTRY/STATE/PROVINCE>. If any provision is held to be invalid or unenforceable, such provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall remain in full force and effect.
+
+8. Contact & Takedown
+Initial takedown requests and vulnerability reports should be opened via GitHub Issues using the "legal/takedown" or "security" template. After initial triage, verified rights holders will be provided with a private contact channel for further documentation and takedown processing.
+
+9. Miscellaneous
+No waiver of any provision of this License will be effective unless in writing and signed by AX271. Headings are for convenience only and do not affect interpretation.
