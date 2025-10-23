@@ -21,7 +21,7 @@ Skrip ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar protek
 - ROM modifikasi "lite" atau bloat-trimmed
 - HP dengan RAM 3GB atau kurang
 
-# 💡 Fitur Utama Skrip (v4.0)
+# 💡 Fitur Utama Skrip (v4.1)
 - ✅ Paksa `window.innerHeight` agar selalu sama dengan `screen.height`
 - ✅ Paksa `screen.availHeight` agar selalu sama dengan `screen.height`
 - ✅ Blokir event `resize` agar tidak bisa dideteksi situs
@@ -54,7 +54,7 @@ Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan un
  * Masuk ke Pengaturan: Pilih opsi Setting.
  * Pilih Script: Dari menu pengaturan, ketuk Script.
  * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
- * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
  * Sesuaikan Alamat Web CBT:
    * Pada bagian awal kode, temukan baris:
 ```bash
@@ -98,7 +98,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Masuk ke Pengaturan: Pilih opsi Setting.
    * Pilih Script: Dari menu pengaturan, ketuk Script.
    * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
-   * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.0 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+   * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
     * Sesuaikan Alamat Web CBT:
     * Pada bagian awal kode, temukan baris:
 ```bash
