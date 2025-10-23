@@ -147,8 +147,7 @@ Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba And
 Saya tidak berniat membuat orang lain tergoda untuk memakai ini saat ujian semester.
 ---
 
-# 📜 Lisensi
-Lisensi & Panduan Penggunaan
+# 📜 Lisensi & Panduan Penggunaan
 ----------------------------
 
 Proyek ini dilindungi oleh **lisensi proprietary khusus** yang dibuat oleh AX271.
