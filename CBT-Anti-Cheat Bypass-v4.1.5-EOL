@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         CBPS v4.1
-// @namespace    https://viayoo.com/
-// @version      4.1
-// @description  Improved interception for mobile height/resize handling
-// @author       You
+// @name         CBPS v4.1.5 - Beta
+// @namespace    https://tampermonkey.net/
+// @version      4.1.5 Beta
+// @description  Interception for mobile height/resize handling AND Anti-Copy Detection
+// @author       AX271
 // @run-at       document-start
 // @match        https://<website_address>/*
 // @grant        none
@@ -11,6 +11,55 @@
 
 (() => {
     'use strict';
+
+    try {
+        const neutralEvents = [
+            'copy','cut','paste',
+            'selectstart','selectionchange',
+            'contextmenu','visibilitychange',
+            'blur','focus',
+            'keydown','keyup',
+            'beforecopy'
+        ];
+
+        neutralEvents.forEach(type => {
+            document.addEventListener(type, e => {
+                e.stopImmediatePropagation();
+            }, true);
+
+            window.addEventListener(type, e => {
+                e.stopImmediatePropagation();
+            }, true);
+        });
+
+        const props = [
+            'oncopy','oncut','onpaste',
+            'onselectstart','onselectionchange',
+            'oncontextmenu','onvisibilitychange',
+            'onblur','onfocus',
+            'onkeydown','onkeyup','onbeforecopy'
+        ];
+
+        const applyOverride = (obj) => {
+            props.forEach(prop => {
+                try {
+                    Object.defineProperty(obj, prop, {
+                        configurable: true,
+                        get() { return null; },
+                        set(_) {}
+                    });
+                } catch (e) {}
+            });
+        };
+
+        applyOverride(document);
+        applyOverride(window);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.body) applyOverride(document.body);
+        }, true);
+
+    } catch (e) {}
 
     const getDeviceHeight = () => {
         try {
