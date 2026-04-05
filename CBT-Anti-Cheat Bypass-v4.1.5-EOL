@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         CBPS v4.1.5 - Beta
+// @name         CBPS v4.1.5 - EOL
 // @namespace    https://tampermonkey.net/
-// @version      4.1.5 Beta
+// @version      4.1.5 EOL
 // @description  Interception for mobile height/resize handling AND Anti-Copy Detection
 // @author       AX271
 // @run-at       document-start
