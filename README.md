@@ -1,4 +1,4 @@
-# 🚀 CBT Anti-Cheat Bypass v4.1
+# 🚀 CBT Anti-Cheat Bypass v4.1.5-EOL
 
 _⚠️ Peringatan: Panduan ini mungkin tidak berfungsi sepenuhnya untuk semua jenis sistem Computer-Based Test (CBT). Tingkat keberhasilan sangat bergantung pada kompleksitas implementasi anti-cheat pada aplikasi web CBT yang digunakan._
 
@@ -6,25 +6,36 @@ Dokumentasi ini dibuat untuk membantu pengguna memahami dan mengimplementasikan 
 
 Skrip ini bertujuan untuk mengeksploitasi kelemahan di sisi frontend agar proteksi anti-cheat bisa dicegah untuk bekerja.
 
-# 📱 Minimum Requirements (Update 2025)
+# 📱 Minimum Requirements (Update 2026)
 
 ✅ Direkomendasikan:
 - Android 10 atau lebih baru
 - **RAM 4GB atau lebih**
 - Support Floating Apps atau Split-Screen
-- Browser: **[Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp).**
+- Browser: **[Via Browser](https://play.google.com/store/apps/details?id=mark.via.gp)**/Peramban lainnya yang mendukung ekstensi
 - ROM biasa (MIUI, One UI, ColorOS full), bukan *Go* atau *Core edition*
+  
+  >catatan: ROM modifikasi di dukung, selama persyaratan fundamental terpenuhi.
+
+---
 
 ❌ Tidak didukung di:
 - Android Go Edition
 - One UI Core
 - ROM modifikasi "lite" atau bloat-trimmed
 - HP dengan RAM 3GB atau kurang
+- Tidak mendukung fitur Split-Screen dan atau Floating Apps
 
-# 💡 Fitur Utama Skrip (v4.1)
-- ✅ Paksa `window.innerHeight` agar selalu sama dengan `screen.height`
-- ✅ Paksa `screen.availHeight` agar selalu sama dengan `screen.height`
-- ✅ Blokir event `resize` agar tidak bisa dideteksi situs
+# 💡 Fitur Utama Skrip (v4.1.5-EOL)
+| Fitur / Kemampuan | Versi 4.1 | Versi 4.1.5 Beta |
+| :--- | :---: | :---: |
+| **Manipulasi Dimensi Layar** | ✅ Ada | ✅ Ada (Lebih Stabil) |
+| **Intersepsi Event Resize** | ✅ Ada | ✅ Ada |
+| **Anti-Copy & Anti-Paste** | ❌ Tidak | ✅ **Ya** |
+| **Buka Tab Lain (Anti-Blur)** | ❌ Berisiko | ✅ **Jauh lebih Aman** |
+| **Buka Menu Klik Kanan** | ❌ Terkunci | ✅ **Terbuka** |
+| **Blokir Deteksi Keyboard** | ❌ Tidak | ✅ **Ya** |
+| **Pembersihan Event Handler** | ❌ Tidak | ✅ **Ya (Override `null`)** |
 
 🔒 Fungsi utama skrip ini adalah untuk menipu atau memanipulasi mekanisme deteksi ukuran jendela/layar pada situs web.
 
@@ -54,7 +65,7 @@ Bagi pengguna perangkat Android tanpa akses root, Via Browser dapat digunakan un
  * Masuk ke Pengaturan: Pilih opsi Setting.
  * Pilih Script: Dari menu pengaturan, ketuk Script.
  * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
- * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+ * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1.5-EOL Script](https://github.com/AX271/CBT-Bypass/blob/main/CBT-Anti-Cheat%20Bypass-v4.1.5-EOL) dan tempelkan ke editor skrip yang tersedia di Via Browser.
  * Sesuaikan Alamat Web CBT:
    * Pada bagian awal kode, temukan baris:
 ```bash
@@ -98,7 +109,7 @@ Untuk pengguna Android dengan akses root, Anda bisa mendapatkan kontrol lebih da
    * Masuk ke Pengaturan: Pilih opsi Setting.
    * Pilih Script: Dari menu pengaturan, ketuk Script.
    * Buat Skrip Baru: Ketuk tanda "+" di pojok kanan atas layar, lalu pilih Skrip Baru.
-   * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1 Script](https://github.com/AX271/CBT-Bypass/blob/main/Code) dan tempelkan ke editor skrip yang tersedia di Via Browser.
+   * Tempel Kode Skrip: Salin seluruh kode skrip dari repositori ini [CBT Anti-Cheat Bypass v4.1.5-EOL Script](https://github.com/AX271/CBT-Bypass/blob/main/CBT-Anti-Cheat%20Bypass-v4.1.5-EOL)) dan tempelkan ke editor skrip yang tersedia di Via Browser.
     * Sesuaikan Alamat Web CBT:
     * Pada bagian awal kode, temukan baris:
 ```bash
@@ -144,7 +155,7 @@ Dukung pengembangan skrip ini dengan memberikan feedback dari hasil uji coba And
 # 🪞 Refleksi
 ---
 > Saya yang membuat skrip ini, awalnya hanya ingin tahu apakah sistem CBT bisa ditembus.  
-Saya tidak berniat membuat orang lain tergoda untuk memakai ini saat ujian semester.
+Saya tidak berniat membuat orang lain tergoda untuk memakai ini untuk kecurangan.
 ---
 
 # 📜 Lisensi & Panduan Penggunaan
@@ -156,6 +167,6 @@ Kode, skrip, dan materi di repositori ini hanya boleh digunakan untuk **riset ke
 
 **Pengguna sepenuhnya menanggung risiko hukum, akademik, atau konsekuensi lain yang timbul akibat penggunaan skrip ini di luar ketentuan di atas. AX271 tidak bertanggung jawab atas penyalahgunaan, kecurangan, atau pelanggaran hukum yang dilakukan pengguna.**
 
-Untuk ketentuan hukum lengkap, silakan lihat [LICENSE](./LICENSE) dan panduan [USAGE.md](./USAGE.md).
+Untuk ketentuan hukum lengkap, silakan lihat [LICENSE](./LICENSE) dan panduan [USAGE](./USAGE.md).
 
 Penggunaan yang tidak sah atau tidak etis dapat berakibat **penghentian lisensi otomatis dan kemungkinan tindakan hukum**.
